@@ -1,0 +1,25 @@
+﻿@model List<Slider>
+
+@foreach (var slider in Model)
+{
+
+    <div class="single-slide item" style="background-image: url(../Assets/img/slider/@slider.Image)">
+        <!-- Start Slider Content -->
+        <div class="slider-content-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="slide-content-wrapper">
+                            <div class="slide-content text-center">
+                                <h2>@slider.Header</h2>
+                                <p>@slider.InnerText </p>
+                                <a class="default-btn" href="about.html">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Start Slider Content -->
+    </div>
+}

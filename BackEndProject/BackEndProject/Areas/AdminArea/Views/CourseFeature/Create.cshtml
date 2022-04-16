@@ -1,0 +1,63 @@
+﻿@model CourseFeature
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/AdminArea/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <form class="forms-sample" method="post" asp-action="Create" enctype="multipart/form-data">
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Starts"></label>
+            <input class="form-control" asp-for="Starts" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Starts" type="text"></span>
+        </div>
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Monthes"></label>
+            <input class="form-control" asp-for="Monthes" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Monthes" type="text"></span>
+        </div>
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Hours"></label>
+            <input class="form-control" asp-for="Hours" style="width:350px;" type="number" step="0.01">
+            <span class="text-danger" asp-validation-for="Hours" type="text"></span>
+        </div>
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="SkillLevel"></label>
+            <input class="form-control" asp-for="SkillLevel" style="width:350px;">
+            <span class="text-danger" asp-validation-for="SkillLevel" type="text"></span>
+        </div>
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Language"></label>
+            <textarea class="form-control" asp-for="Language" style="width:350px;"></textarea>
+            <span class="text-danger" asp-validation-for="Language" type="text"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="CourseId"></label>
+            <select asp-for="CourseId" asp-items="@ViewBag.categories"></select>
+            <span class="text-danger" asp-validation-for="CourseId"></span>
+        </div>
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="StundentCount"></label>
+            <input class="form-control" asp-for="StundentCount" style="width:350px;" type="number">
+            <span class="text-danger" asp-validation-for="StundentCount" type="text"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Assesment"> </label>
+            <input class="form-control" asp-for="Assesment" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Assesment"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary me-2">Submit</button>
+        <a asp-action="Index" class="btn btn-light">Cancel</a>
+    </form>
+</div>
+
+@section Scripts{
+    <partial name="_ValidationPartialView" />
+}

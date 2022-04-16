@@ -1,0 +1,162 @@
+﻿@model TeacherSkill
+
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Areas/AdminArea/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="container">
+    <form class="forms-sample" method="post" asp-action="Update" enctype="multipart/form-data">
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Teacher.Name"></label>
+            <input class="form-control" asp-for="Teacher.Name" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Teacher.Name"></span>
+        </div>
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Photo"></label>
+            <input class="form-control" asp-for="Photo" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Photo"></span>
+        </div>
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Teacher.AboutDesc"></label>
+            <input class="form-control" asp-for="Teacher.AboutDesc" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Teacher.AboutDesc"></span>
+        </div>
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Teacher.AboutHeader"></label>
+            <input class="form-control" asp-for="Teacher.AboutHeader" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Teacher.AboutHeader"></span>
+        </div>
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Teacher.Degree"></label>
+            <input class="form-control" asp-for="Teacher.Degree" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Teacher.Degree"></span>
+        </div>
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Teacher.Experince"></label>
+            <input class="form-control" asp-for="Teacher.Experince" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Teacher.Experince"></span>
+        </div>
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Teacher.Facebook"></label>
+            <input class="form-control" asp-for="Teacher.Facebook" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Teacher.Facebook"></span>
+        </div>
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Teacher.Faculty"></label>
+            <input class="form-control" asp-for="Teacher.Faculty" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Teacher.Faculty"></span>
+        </div>
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Teacher.Hobbies"></label>
+            <input class="form-control" asp-for="Teacher.Hobbies" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Teacher.Hobbies"></span>
+        </div>
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Teacher.Knowledge"></label>
+            <input class="form-control" asp-for="Teacher.Knowledge" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Teacher.Knowledge"></span>
+        </div>
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Teacher.Mail"></label>
+            <input class="form-control" asp-for="Teacher.Mail" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Teacher.Mail"></span>
+        </div>
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Teacher.Phone"></label>
+            <input class="form-control" asp-for="Teacher.Phone" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Teacher.Phone"></span>
+        </div>
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Teacher.Pinterest"></label>
+            <input class="form-control" asp-for="Teacher.Pinterest" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Teacher.Pinterest"></span>
+        </div>
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Teacher.Skype"></label>
+            <input class="form-control" asp-for="Teacher.Skype" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Teacher.Skype"></span>
+        </div>
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Teacher.Twitter"></label>
+            <input class="form-control" asp-for="Teacher.Twitter" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Teacher.Twitter"></span>
+        </div>
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Teacher.Vimeo"></label>
+            <input class="form-control" asp-for="Teacher.Vimeo" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Teacher.Vimeo"></span>
+        </div>
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Teacher.Whatsapp"></label>
+            <input class="form-control" asp-for="Teacher.Whatsapp" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Teacher.Whatsapp"></span>
+        </div>
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Skill.Language"></label>
+            <input class="form-control" asp-for="Skill.Language" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Skill.Language"></span>
+        </div>
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Skill.Communication"></label>
+            <input class="form-control" asp-for="Skill.Communication" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Skill.Communication"></span>
+        </div>
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Skill.Design"></label>
+            <input class="form-control" asp-for="Skill.Design" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Skill.Design"></span>
+        </div>
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Skill.Development"></label>
+            <input class="form-control" asp-for="Skill.Development" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Skill.Development"></span>
+        </div>
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Skill.Innovation"></label>
+            <input class="form-control" asp-for="Skill.Innovation" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Skill.Innovation"></span>
+        </div>
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Skill.TeacherSkills"></label>
+            <input class="form-control" asp-for="Skill.TeacherSkills" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Skill.TeacherSkills"></span>
+        </div>
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Skill.TeamLeader"></label>
+            <input class="form-control" asp-for="Skill.TeamLeader" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Skill.TeamLeader"></span>
+        </div>
+
+
+
+        <button type="submit" class="btn btn-primary me-2">Submit</button>
+        <a asp-action="Index" class="btn btn-light">Cancel</a>
+    </form>
+</div>
+

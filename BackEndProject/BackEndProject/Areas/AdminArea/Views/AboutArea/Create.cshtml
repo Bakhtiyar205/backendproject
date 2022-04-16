@@ -1,0 +1,39 @@
+﻿@model AboutArea
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/AdminArea/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="container">
+    <form class="forms-sample" method="post" asp-action="Create" enctype="multipart/form-data">
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Photo"></label>
+            <input class="form-control" asp-for="Photo" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Photo"></span>
+        </div>
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Header"></label>
+            <input class="form-control" asp-for="Header" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Header"></span>
+        </div>
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Text"></label>
+            <input class="form-control" asp-for="Text" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Text"></span>
+        </div>
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="TextSecond"></label>
+            <input class="form-control" asp-for="TextSecond" style="width:350px;">
+            <span class="text-danger" asp-validation-for="TextSecond"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary me-2">Submit</button>
+        <a asp-action="Index" class="btn btn-light">Cancel</a>
+    </form>
+</div>

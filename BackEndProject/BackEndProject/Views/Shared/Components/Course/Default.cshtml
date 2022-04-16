@@ -1,0 +1,23 @@
+﻿@model List<Course>
+
+@foreach (var course in Model)
+{
+    <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="single-course">
+            <div class="course-img">
+                <a asp-controller="Detail" asp-action="CourseDetail" asp-route-id="@course.Id">
+                    <img src="~/Assets/img/course/@course.Image" alt="course">
+                    <div class="course-hover">
+                        <i class="fa fa-link"></i>
+                    </div>
+                </a>
+            </div>
+            <div class="course-content">
+                <h3><a href="course-details.html">@course.Header</a></h3>
+                <p>@course.Text.Substring(0, 100) ...</p>
+                <a class="default-btn" asp-controller="Course" asp-action="CourseDetail" asp-route-id="@course.Id">read more</a>
+            </div>
+        </div>
+    </div>
+
+}

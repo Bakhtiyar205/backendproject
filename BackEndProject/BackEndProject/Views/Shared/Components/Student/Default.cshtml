@@ -1,0 +1,21 @@
+﻿@model List<Student>
+
+@foreach (var student in Model)
+{
+    <div class="testimonial-owl owl-theme owl-carousel">
+        <div class="col-md-8 col-md-offset-2 col-sm-12">
+            <div class="single-testimonial">
+                <div class="testimonial-info">
+                    <div class="testimonial-img">
+                        <img src="~/Assets/img/testimonial/@student.StudentImages.FirstOrDefault(m=>m.IsMain).Image" alt="testimonial">
+                    </div>
+                    <div class="testimonial-content">
+                        <p>@student.StudentThought.FirstOrDefault(m => m.IsMain).Thought</p>
+                        <h4>@student.Name</h4>
+                        <h5>Student, CSE</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,34 @@
+﻿@model AboutArea
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Areas/AdminArea/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <div class="form-group">
+
+        @if (Model.Image != null)
+        {
+            <img src="~/Assets/img/about/@Model.Image" style="width:100px;height:100px" />
+        }
+    </div>
+    <div class="form-group">
+        <label asp-for="Header"></label><br />
+        <input class="form-control" asp-for="Header" style="width:350px;"><br />
+        <span class="text-danger" asp-validation-for="Header"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Text"></label> <br />
+        <input class="form-control" asp-for="Text" style="width:350px;"><br />
+        <span class="text-danger" asp-validation-for="Text"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TextSecond"></label> <br />
+        <input class="form-control" asp-for="TextSecond" style="width:350px;"><br />
+        <span class="text-danger" asp-validation-for="TextSecond"></span>
+    </div>
+    <div style="width:300px;">
+
+        <a asp-action="Index" class="btn btn-light">Cancel</a>
+    </div>
+</div>

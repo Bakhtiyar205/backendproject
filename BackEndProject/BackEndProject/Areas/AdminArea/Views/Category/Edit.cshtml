@@ -1,0 +1,19 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/AdminArea/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <form class="forms-sample" method="post" asp-action="Edit">
+        <div class="form-group">
+            <label asp-for="CategorySection"></label><br />
+            <input class="form-control" asp-for="CategorySection" style="width:350px;"><br />
+            <span class="text-danger" asp-validation-for="CategorySection"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary me-2">Submit</button>
+        <a asp-action="Index" class="btn btn-light">Cancel</a>
+    </form>
+</div>
+

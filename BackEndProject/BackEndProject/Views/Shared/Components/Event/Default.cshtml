@@ -1,0 +1,24 @@
+﻿@model List<EventDetail>
+
+
+@foreach (var item in Model)
+{
+    <div class="col-md-6 col-sm-12 col-xs-12 mb-35">
+        <div class="single-event">
+            <div class="event-img">
+                <a asp-controller="Detail" asp-action="EventDetailView" asp-route-id="@item.Id"><img src="~/Assets/img/event/@item.Image" alt="event"></a>
+            </div>
+            <div class="event-content text-left">
+                <h3>20 June 2017</h3>
+                <h4><a href="event-details.html">ADVANCE PHP WORKSHOP</a></h4>
+                <ul>
+                    <li><i class="fa fa-clock-o"></i>9.00 AM - 4.45 PM</li>
+                    <li><i class="fa fa-map-marker"></i>New Yourk City</li>
+                </ul>
+                <div class="event-content-right">
+                    <a class="default-btn" href="event-details.html">join now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}

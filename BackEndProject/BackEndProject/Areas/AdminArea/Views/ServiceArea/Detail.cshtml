@@ -1,0 +1,23 @@
+﻿@model ServiceArea
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Areas/AdminArea/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <div class="form-group">
+        <label asp-for="TeacherLevel"></label><br />
+        <input class="form-control" asp-for="TeacherLevel" style="width:350px;"><br />
+        <span class="text-danger" asp-validation-for="TeacherLevel"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description"></label> <br />
+        <input class="form-control" asp-for="Description" style="width:350px;"><br />
+        <span class="text-danger" asp-validation-for="Description"></span>
+    </div>
+    <div style="width:300px;">
+
+        <a asp-action="Index" class="btn btn-light">Cancel</a>
+    </div>
+</div>
+

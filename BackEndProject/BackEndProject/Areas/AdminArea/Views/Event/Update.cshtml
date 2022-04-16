@@ -1,0 +1,66 @@
+﻿@model EventDetail
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Areas/AdminArea/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <form class="forms-sample" method="post" asp-action="Update" enctype="multipart/form-data">
+        <img src="~/Assets/img/event/@Model.Image" alt="Alternate Text" style="width:300px; height:300px; border-radius:10px;" />
+        <div class="form-group">
+
+            @* For Naming Label *@
+            <label asp-for="Name"></label>
+            <input class="form-control" asp-for="Name" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Name" type="text"></span>
+        </div>
+
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Time"></label>
+            <input class="form-control" asp-for="Time" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Time" type="text"></span>
+        </div>
+
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Address"></label>
+            <input class="form-control" asp-for="Address" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Address" type="text"></span>
+        </div>
+
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Text1"></label>
+            <input class="form-control" asp-for="Text1" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Text1" type="text"></span>
+        </div>
+
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Text2"></label>
+            <input class="form-control" asp-for="Text2" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Text2" type="text"></span>
+        </div>
+
+        <div class="form-group">
+            @* For Naming Label *@
+            <label asp-for="Text3"></label>
+            <input class="form-control" asp-for="Text3" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Text3" type="text"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Photo">Images: </label>
+            <input class="form-control" asp-for="Photo" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Photo"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary me-2">Submit</button>
+        <a asp-action="Index" class="btn btn-light">Cancel</a>
+    </form>
+</div>
+
+@section Scripts{
+    <partial name="_ValidationPartialView" />
+}

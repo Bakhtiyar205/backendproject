@@ -1,0 +1,75 @@
+﻿@model List<TeacherSkill>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/AdminArea/Views/Shared/_AdminLayout.cshtml";
+    int count = 1;
+}
+
+<div class="container">
+    <div class="row">
+        <div class="header d-flex justify-content-between mt-3">
+            <h1>Categories</h1>
+            <div>
+
+                <a class="btn btn-success" asp-action="create">Create Category</a>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>
+                            Number
+                        </th>
+                        <th>
+                            Image
+                        </th>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Settings
+                        </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var teacherSkill in Model)
+                    {
+                    <tr>
+                        <td>
+                            @count
+                        </td>
+                        <td>
+                            <img src="~/Assets/img/teacher/@teacherSkill.Teacher.Image" alt="Alternative Image" style="width:100px; height:100px;border-radius:10%;" />
+
+                        </td>
+                        <td>
+                            @teacherSkill.Teacher.Name
+                        </td>
+                        <td>
+                            <a class="btn btn-primary btn-sm" asp-action="Detail" asp-route-id="@teacherSkill.TeacherId">
+                                <i class="mdi mdi-account-box-outline"></i>
+                            </a>
+                            <a class="btn btn-warning btn-sm" asp-action="Update" asp-route-id="@teacherSkill.TeacherId">
+                                <i class="mdi mdi-credit-card"></i>
+                            </a>
+                            <form method="post" asp-action="Delete" asp-route-id="@teacherSkill.TeacherId" style="display:inline-block">
+                                <button class="btn btn-danger btn-sm" type="submit">
+                                    <i class="mdi mdi-delete-forever"> </i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                        count++;
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+

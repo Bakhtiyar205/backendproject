@@ -1,0 +1,10 @@
+﻿@model List<NoticedEvent>
+
+@foreach (var noticedEvent in Model)
+{
+    <div class="single-notice-left mb-23 pb-20">
+        <h4>@noticedEvent.Date</h4>
+        <p>@noticedEvent.EvenetDetail </p>
+    </div>
+
+}

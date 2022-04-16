@@ -1,0 +1,42 @@
+﻿@model Blog
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Areas/AdminArea/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <form class="forms-sample" method="post" asp-action="Update" enctype="multipart/form-data">
+        <div class="form-group">
+            <label asp-for="Header"></label>
+            <input class="form-control" asp-for="Header" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Header" type="text"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Name"></label>
+            <input class="form-control" asp-for="Name" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Name" type="text"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Text"></label>
+            <input class="form-control" asp-for="Text" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Text" type="text"></span>
+        </div>
+        <div>
+            <label asp-for="Date">Images: </label>
+            <input class="form-control" asp-for="Date" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Date"></span>
+        </div>
+        <div>
+            <label asp-for="Photo">Images: </label>
+            <input class="form-control" asp-for="Photo" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Photo"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary me-2">Submit</button>
+        <a asp-action="Index" class="btn btn-light">Cancel</a>
+    </form>
+</div>
+
+@section Scripts{
+    <partial name="_ValidationPartialView" />
+}
