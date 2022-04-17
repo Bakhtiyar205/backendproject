@@ -74,6 +74,8 @@ namespace BackEndProject
             services.Configure<MailSettings>(Configuration.GetSection("MailSettings"));
             services.AddScoped<IMailService, MailService>();
             services.AddScoped<ISubscriptionService, SubsciptionService>();
+            services.AddScoped<ICommentService, CommentService>();
+
 
         }
 

@@ -15,10 +15,10 @@ namespace BackEndProject.ViewComponents
             _eventDetailsService = eventDetailsService;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync(int? take)
+        public async Task<IViewComponentResult> InvokeAsync(int? take, int col)
         {
             var eventDetails = await _eventDetailsService.GetStudent(take);
-
+            ViewBag.Col = col;
             return await Task.FromResult(View(eventDetails));
         }
     }

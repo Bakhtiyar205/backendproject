@@ -1,0 +1,75 @@
+﻿@model List<Comment>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/AdminArea/Views/Shared/_AdminLayout.cshtml";
+    int count = 1;
+}
+
+<div class="container">
+    <div class="row">
+        <div class="header d-flex justify-content-between mt-3">
+            <h1>Categories</h1>
+            <div>
+
+                <a class="btn btn-success" asp-action="create">Create Category</a>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>
+                            Number
+                        </th>
+
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Comments
+                        </th>
+                        <th>
+                            Settings
+                        </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var comment in Model)
+                    {
+                    <tr>
+                        <td>
+                            @count
+                        </td>
+                        <td>
+                            @comment.Name
+                        </td>
+                        <td>
+                            @comment.CommentSection
+                        </td>
+                        <td>
+                            <form method="post" asp-action="Aprove" asp-route-id="@comment.Id" style="display:inline-block">
+                                <button class="btn btn-danger btn-sm" type="submit" style="background-color:#0067ff;color:#fff;">
+                                    Aprove
+                                </button>
+                            </form>
+                            <form method="post" asp-action="DisAprove" asp-route-id="@comment.Id" style="display:inline-block">
+                                <button class="btn btn-danger btn-sm" type="submit" style="background-color:#bb0000;color:#fff;">
+                                    DisAprove
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                        count++;
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+

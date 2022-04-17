@@ -1,4 +1,4 @@
-﻿
+﻿@model List<Comment>
 
 
 <div class="banner-area-wrapper">
@@ -26,6 +26,22 @@
             <div id="googleMap" style="width:100%;height:440px;"></div>
         </div>
     </div>
+</div>
+<div class="container">
+    <div class="text-center">
+        <h3>  Comments  </h3>
+            <ul class="d-flex">
+                @foreach (var comment in Model)
+                {
+                    <li>
+                        <div> @comment.Name - @comment.CommentSection   </div>
+                    </li>
+
+                }
+            </ul>
+    </div>
+    
+
 </div>
 <div class="contact-area pt-150 pb-140">
     <div class="container">
@@ -68,26 +84,52 @@
                 <div class="reply-area">
                     <h3>LEAVE A message</h3>
                     <p>I must explain to you how all this a mistaken idea of ncing great explorer of the rut the is lder of human happinescias unde omnis iste natus error sit volptatem </p>
-                    <form id="contact-form" action="http://demo.devitems.com/eduhome/mail.php" method="post">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p>Name</p>
-                                <input type="text" name="name" id="name">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <form id="contact-form" method="post" asp-action="CreateComment">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p>Name</p>
+                                    <input name="name" id="name" @User.Identity.Name>
+                                </div>
+                                <div class="col-md-12">
+                                    <p>Email</p>
+                                    <input type="text" name="email" id="email" required>
+                                </div>
+                                <div class="col-md-12">
+                                    <p>Subject</p>
+                                    <input type="text" name="subject" id="subject">
+                                    <p>Massage</p>
+                                    <textarea name="comment" id="message" cols="15"  rows="10" required></textarea>
+                                </div>
                             </div>
-                            <div class="col-md-12">
-                                <p>Email</p>
-                                <input type="text" name="email" id="email">
+                            <button type="submit" class="reply-btn" style="padding:10px; background-color:blue;"><span style="color:#fff;">send message</span></button>
+                        </form>
+                    }
+                    else
+                    {
+                        <form id="contact-form">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p>Name</p>
+                                    <input name="name" id="name">
+                                </div>
+                                <div class="col-md-12">
+                                    <p>Email</p>
+                                    <input type="text" name="email" id="email" required>
+                                </div>
+                                <div class="col-md-12">
+                                    <p>Subject</p>
+                                    <input type="text" name="subject" id="subject">
+                                    <p>Massage</p>
+                                    <textarea name="message" id="message" cols="15" rows="10" required></textarea>
+                                </div>
                             </div>
-                            <div class="col-md-12">
-                                <p>Subject</p>
-                                <input type="text" name="subject" id="subject">
-                                <p>Massage</p>
-                                <textarea name="message" id="message" cols="15" rows="10"></textarea>
-                            </div>
-                        </div>
-                        <a class="reply-btn" href="#" data-text="send"><span>send message</span></a>
-                        <p class="form-messege"></p>
-                    </form>
+                            <a class="reply-btn" asp-controller="Account" asp-action="Login" data-text="send"><span>send message</span></a>
+                            <p class="form-messege"></p>
+                        </form>
+                    }
+
                 </div>
             </div>
         </div>

@@ -1,5 +1,4 @@
-﻿using BackEndProject.Datas;
-using BackEndProject.Models;
+﻿using BackEndProject.Models;
 using BackEndProject.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -7,12 +6,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BackEndProject.Controllers
+namespace BackEndProject.Areas.AdminArea.Controllers
 {
-    public class ContactController : Controller
+    [Area("AdminArea")]
+    public class CommentController : Controller
     {
         private readonly ICommentService _commentService;
-        public ContactController(ICommentService commentService,AppDbContext context)
+        public CommentController(ICommentService commentService)
         {
             _commentService = commentService;
         }
@@ -21,12 +21,20 @@ namespace BackEndProject.Controllers
             List<Comment> comments = await _commentService.GetComments();
             return View(comments);
         }
-        
-        [HttpPost]
-        public async Task<IActionResult> CreateComment(string name, string comment)
+        public async Task<IActionResult> Aprove(int id)
         {
-            await _commentService.PostComments(name, comment);
+            await _commentService.ApproveComment(id);
+
             return RedirectToAction(nameof(Index));
+                
+        }
+
+        public async Task<IActionResult> DisAprove(int id)
+        {
+            await _commentService.DisApproveComment(id);
+
+            return RedirectToAction(nameof(Index));
+
         }
     }
 }

@@ -27,15 +27,9 @@
     <script src="~/Assets/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
-    <!--[if lt IE 8]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-    <!-- Header Area Start -->
-    @await Component.InvokeAsync("Header");
+    @await Component.InvokeAsync("Header")
     @RenderBody()
-    @await Component.InvokeAsync("Footer");
-
-    <!-- Footer End -->
+    @await Component.InvokeAsync("Footer")
 
     <script src="~/Assets/js/vendor/jquery-1.12.0.min.js"></script>
     <script src="~/Assets/js/bootstrap.min.js"></script>

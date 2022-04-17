@@ -3,7 +3,7 @@
 
 @foreach (var item in Model)
 {
-    <div class="col-md-6 col-sm-12 col-xs-12 mb-35">
+    <div class="col-md-@ViewBag.Col col-sm-12 col-xs-12 mb-35">
         <div class="single-event">
             <div class="event-img">
                 <a asp-controller="Detail" asp-action="EventDetailView" asp-route-id="@item.Id"><img src="~/Assets/img/event/@item.Image" alt="event"></a>
