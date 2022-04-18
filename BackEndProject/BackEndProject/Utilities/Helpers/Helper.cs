@@ -29,7 +29,8 @@ namespace BackEndProject.Utilities.Helpers
         public enum UserRoles
         {
             Admin,
-            Member
+            Member,
+            Moderator
         }
     }
 

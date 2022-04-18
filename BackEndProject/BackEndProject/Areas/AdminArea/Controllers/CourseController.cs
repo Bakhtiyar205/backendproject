@@ -11,10 +11,14 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 using BackEndProject.Utilities.Files;
 using BackEndProject.Utilities.Helpers;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BackEndProject.Areas.AdminArea.Controllers
 {
     [Area("AdminArea")]
+    [Authorize(Roles = "Admin,Moderator")]
+
+
     public class CourseController : Controller
     {
         private readonly AppDbContext _context;

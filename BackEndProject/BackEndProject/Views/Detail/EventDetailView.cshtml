@@ -1,4 +1,4 @@
-﻿@model EventDetail
+﻿@model EventDetailVM
 
 
 
@@ -25,40 +25,35 @@
             <div class="col-md-8">
                 <div class="event-details">
                     <div class="event-details-img">
-                        <img src="img/event/event-details.jpg" alt="event-details">
+                        <img src="~/assets/img/event/@Model.Events.Image" alt="event-details">
                         <div class="event-date">
                             <h3>20 <span>jun</span></h3>
                         </div>
                     </div>
                     <div class="event-details-content">
-                        <h2>ADVANCE WED DEVELOPMENT WORKSHOP</h2>
+                        <h2>@Model.Events.Name</h2>
                         <ul>
-                            <li><span>time : </span>9:30am - 4:45pm</li>
-                            <li><span>venue : </span>Cristal Centre, 254 New Yourk</li>
+                            <li><span>time : </span>@Model.Events.Time</li>
+                            <li><span>venue : </span>@Model.Events.Address</li>
                         </ul>
-                        <p>I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human happiness pcias unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit asnatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui </p>
-                        <p>I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human happiness pcias unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem </p>
-                        <p>I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human happiness pcias unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
+                        <p>@Model.Events.Text1 </p>
+                        <p>@Model.Events.Text2</p>
+                        <p>@Model.Events.Text3</p>
                         <div class="speakers-area fix">
                             <h4>speakers</h4>
-                            <div class="single-speaker">
-                                <div class="speaker-img">
-                                    <img src="img/event/speaker1.jpg" alt="speaker">
+                            @foreach (var speakers in Model.Speakers)
+                            {
+                                <div class="single-speaker">
+                                    <div class="speaker-img">
+                                        <img src="~/Assets/img/teacher/@speakers.Image" alt="speaker">
+                                    </div>
+                                    <div class="speaker-name">
+                                        <h5>@speakers.Name</h5>
+                                        <p>@speakers.Duty, @speakers.Company </p>
+                                    </div>
                                 </div>
-                                <div class="speaker-name">
-                                    <h5>Anthony Smith</h5>
-                                    <p>CEO, Hastech </p>
-                                </div>
-                            </div>
-                            <div class="single-speaker">
-                                <div class="speaker-img">
-                                    <img src="img/event/speaker2.jpg" alt="speaker">
-                                </div>
-                                <div class="speaker-name">
-                                    <h5>Lucy Rose</h5>
-                                    <p>Developer, STD </p>
-                                </div>
-                            </div>
+                            }
+
                         </div>
                     </div>
                     <div class="reply-area">
@@ -113,7 +108,7 @@
                     </div>
                     <div class="single-blog-widget mb-50">
                         <div class="single-blog-banner">
-                            <a href="blog-details.html" id="blog"><img src="img/blog/blog-img.jpg" alt="blog"></a>
+                            <a href="blog-details.html" id="blog"><img src="~/Assets/imgblog/blog-img.jpg" alt="blog"></a>
                             <h2>best<br> eductaion<br> theme</h2>
                         </div>
                     </div>
@@ -122,7 +117,7 @@
                         <div class="single-post mb-30">
                             <div class="single-post-img">
                                 <a href="blog-details.html">
-                                    <img src="img/post/post1.jpg" alt="post">
+                                    <img src="~/Assets/img/imgpost/post1.jpg" alt="post">
                                     <div class="blog-hover">
                                         <i class="fa fa-link"></i>
                                     </div>
@@ -136,7 +131,7 @@
                         <div class="single-post mb-30">
                             <div class="single-post-img">
                                 <a href="blog-details.html">
-                                    <img src="img/post/post2.jpg" alt="post">
+                                    <img src="~/Assets/imgpost/post2.jpg" alt="post">
                                     <div class="blog-hover">
                                         <i class="fa fa-link"></i>
                                     </div>
@@ -150,7 +145,7 @@
                         <div class="single-post">
                             <div class="single-post-img">
                                 <a href="blog-details.html">
-                                    <img src="img/post/post3.jpg" alt="post">
+                                    <img src="~/Assets/imgpost/post3.jpg" alt="post">
                                     <div class="blog-hover">
                                         <i class="fa fa-link"></i>
                                     </div>

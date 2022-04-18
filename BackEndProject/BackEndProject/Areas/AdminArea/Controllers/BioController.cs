@@ -1,17 +1,16 @@
 ﻿using BackEndProject.Datas;
 using BackEndProject.Models;
-using BackEndProject.Services.Interfaces;
-using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace BackEndProject.Areas.AdminArea.Controllers
 {
     [Area("AdminArea")]
+    [Authorize(Roles = "Admin")]
+
     public class BioController : Controller
     {
         private readonly AppDbContext _context;

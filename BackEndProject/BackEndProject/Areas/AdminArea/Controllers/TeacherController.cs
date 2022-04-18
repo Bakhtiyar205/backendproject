@@ -3,6 +3,7 @@ using BackEndProject.Models;
 using BackEndProject.Utilities.Files;
 using BackEndProject.Utilities.Helpers;
 using BackEndProject.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -15,6 +16,9 @@ using System.Threading.Tasks;
 namespace BackEndProject.Areas.AdminArea.Controllers
 {
     [Area("AdminArea")]
+    [Authorize(Roles = "Admin")]
+
+
     public class TeacherController : Controller
     {
         private readonly AppDbContext _context;

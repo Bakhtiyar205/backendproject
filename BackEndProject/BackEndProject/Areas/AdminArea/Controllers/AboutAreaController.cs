@@ -10,10 +10,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using BackEndProject.Utilities.Files;
 using BackEndProject.Utilities.Helpers;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BackEndProject.Areas.AdminArea.Controllers
 {
     [Area("AdminArea")]
+    [Authorize(Roles = "Admin")]
     public class AboutAreaController : Controller
     {
         

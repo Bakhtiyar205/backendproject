@@ -63,7 +63,7 @@ namespace BackEndProject.Controllers
                 return View(registerVM);
             }
 
-            //await _userManager.AddToRoleAsync(appUser, UserRoles.Member.ToString());
+            await _userManager.AddToRoleAsync(appUser, UserRoles.Member.ToString());
 
             var code = await _userManager.GenerateEmailConfirmationTokenAsync(appUser);
 
@@ -233,6 +233,17 @@ namespace BackEndProject.Controllers
         public IActionResult ForgetPasswordConfirm()
         {
             return View();
+        }
+
+        public async Task Create()
+        {
+            foreach (var role in Enum.GetValues(typeof(UserRoles)))
+            {
+                if (!await _roleManager.RoleExistsAsync(role.ToString()))
+                {
+                    await _roleManager.CreateAsync(new IdentityRole { Name = role.ToString() });
+                }
+            }
         }
 
 

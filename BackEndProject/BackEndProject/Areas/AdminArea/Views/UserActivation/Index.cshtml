@@ -69,22 +69,29 @@
                                 </td>
                             }
 
-                            <td>
-                                <form method="post" asp-action="Active" asp-route-id="@user.Id" style="display:inline-block">
+                        <td>
+                            <form method="post" asp-action="IsModerator" asp-route-id="@user.Id" style="display:inline-block">
 
 
-                                    <button class="btn btn-primary btn-sm" type="submit">
-                                        Active
-                                    </button>
-                                </form>
-                                <form method="post" asp-action="DeActive" asp-route-id="@user.Id" style="display:inline-block">
+                                <button class="btn btn-primary btn-sm" type="submit">
+                                    Is Moderator
+                                </button>
+                            </form>
+                            <form method="post" asp-action="Active" asp-route-id="@user.Id" style="display:inline-block">
 
 
-                                    <button class="btn btn-danger btn-sm" type="submit">
-                                        DeActive
-                                    </button>
-                                </form>
-                            </td>
+                                <button class="btn btn-primary btn-sm" type="submit">
+                                    Active
+                                </button>
+                            </form>
+                            <form method="post" asp-action="DeActive" asp-route-id="@user.Id" style="display:inline-block">
+
+
+                                <button class="btn btn-danger btn-sm" type="submit">
+                                    DeActive
+                                </button>
+                            </form>
+                        </td>
                         </tr>
                         count++;
                     }

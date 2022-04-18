@@ -1,6 +1,7 @@
 ﻿using BackEndProject.Datas;
 using BackEndProject.Models;
 using BackEndProject.Utilities.Files;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -13,6 +14,8 @@ using System.Threading.Tasks;
 namespace BackEndProject.Areas.AdminArea.Controllers
 {
     [Area("AdminArea")]
+    [Authorize(Roles = "Admin")]
+
     public class CourseFeatureController : Controller
     {
         private readonly AppDbContext _context;

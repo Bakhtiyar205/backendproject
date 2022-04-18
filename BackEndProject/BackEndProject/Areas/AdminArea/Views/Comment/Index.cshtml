@@ -8,7 +8,7 @@
 <div class="container">
     <div class="row">
         <div class="header d-flex justify-content-between mt-3">
-            <h1>Categories</h1>
+            <h1>Comments</h1>
             <div>
 
                 <a class="btn btn-success" asp-action="create">Create Category</a>
@@ -37,16 +37,35 @@
                 <tbody>
                     @foreach (var comment in Model)
                     {
+
+
                     <tr>
-                        <td>
-                            @count
-                        </td>
-                        <td>
-                            @comment.Name
-                        </td>
-                        <td>
-                            @comment.CommentSection
-                        </td>
+                        @if (comment.IsConfirmed)
+                        {
+
+                            <td>
+                                @count
+                            </td>
+                            <td style="color:green">
+                                @comment.Name
+                            </td>
+                            <td style="color:green">
+                                @comment.CommentSection
+                            </td>
+                        }
+                        else
+                        {
+                            <td>
+                                @count
+                            </td>
+                            <td style="color:red">
+                                @comment.Name
+                            </td>
+                            <td style="color:red">
+                                @comment.CommentSection
+                            </td>
+                        }
+
                         <td>
                             <form method="post" asp-action="Aprove" asp-route-id="@comment.Id" style="display:inline-block">
                                 <button class="btn btn-danger btn-sm" type="submit" style="background-color:#0067ff;color:#fff;">

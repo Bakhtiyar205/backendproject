@@ -21,7 +21,7 @@ namespace BackEndProject.Controllers
 
         public async Task<IActionResult> CourseDetail()
         {
-            List<Category> category = await _context.Categories.Where(m =>! m.IsDeleted).ToListAsync();
+            List<Category> category = await _context.Categories.Where(m => !m.IsDeleted).ToListAsync();
             Course course = await _context.Courses.Include(m => m.CourseFeature).FirstOrDefaultAsync();
 
             CourseVM courseVM = new CourseVM
@@ -44,7 +44,17 @@ namespace BackEndProject.Controllers
                                             .Include(m => m.Speakers)
                                             .Where(m => m.Id == id)
                                             .FirstOrDefaultAsync();
-            return View(eventDetail);
+            List<Speakers> speakers = await _context.Speakers.ToListAsync();
+
+
+            EventDetailVM events = new EventDetailVM
+            {
+                Events = eventDetail,
+                Speakers = speakers
+                
+            };
+
+            return View(events);
         }
 
         public async Task<IActionResult> TeacherDetail(int id)
